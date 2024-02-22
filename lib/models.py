@@ -10,7 +10,7 @@ class Department(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(50))
     
-    # Define the relationship with employees
+    #Define the relationship with employees
     employees = relationship("Employee", back_populates="department")
 
 class Employee(Base):
@@ -24,5 +24,5 @@ class Employee(Base):
     salary = Column(Integer)
     department_id = Column(Integer, ForeignKey('departments.id'))  # Add this line
     
-    # Define the relationship with departments
+     #Define the relationship with departments
     department = relationship("Department", back_populates="employees")
